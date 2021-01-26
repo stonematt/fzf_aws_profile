@@ -1,0 +1,29 @@
+# source this in your bash env
+export awsconfig=~/.aws/config
+# playground, if you don't have an aws config
+# export awsconfig=awsexample/config
+ap() {
+  eval $(grep -e '^.profile' $awsconfig | awk -F"[][]" '{print $2}' |while read a p ; do echo "AWS_PROFILE=$p" ; done  |
+  fzf +s --tac )
+}
+
+# modified from __fzf_history__ at https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash
+# objective:
+#   - Ctrl-b bound to this function searchs aws profile with fzf
+#   - selecting an item returns value to the prompt in edit mode
+#   - similar to Ctrl-r doing a history search with fzf
+__fzf_ap() {
+  local output
+  output=$(
+    grep -e '^.profile' $awsconfig | awk -F"[][]" '{print $2}' |while read a p ; do echo "AWS_PROFILE=$p" ; done |
+    fzf +s --tac
+  ) || return
+  READLINE_LINE="${output#*$'\t'} "
+  if [ -z "$READLINE_POINT" ]; then
+    echo "$READLINE_LINE"
+  else
+    READLINE_POINT=0x7fffffff
+  fi
+}
+
+bind -x '"\C-b":"__fzf_ap"'
