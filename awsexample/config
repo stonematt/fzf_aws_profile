@@ -1,0 +1,62 @@
+
+[profile ClientOps]
+region = us-east-1
+role_arn = arn:aws:iam::xxx:role/admin
+source_profile = staff
+role_session_name = me@email.com
+
+[profile Ops]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/admin
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_Ops]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/admin
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_clientOps]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/admin
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_clientOps_ca]
+region = ca-central-1
+role_arn = arn:aws:iam::xxxxx:role/admin
+source_profile = staff
+role_session_name = me@email.com
+
+[profile cma_uk]
+region = eu-west-2
+role_arn = arn:aws:iam::xxxxx:role/cma
+source_profile = staff
+role_session_name = me@email.com
+
+[profile cma_us]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/cma
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_sftp]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/admin_sftp
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_sftp_us]
+region = us-east-1
+role_arn = arn:aws:iam::xxxxx:role/admin_sftp
+source_profile = staff
+role_session_name = me@email.com
+
+[profile admin_sftp_uk]
+region = eu-west-2
+role_arn = arn:aws:iam::xxxxx:role/admin_sftp
+source_profile = staff
+role_session_name = me@email.com
+
+
