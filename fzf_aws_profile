@@ -9,9 +9,10 @@ ap() {
 
 # modified from __fzf_history__ at https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash
 # objective:
-#   - Ctrl-b bound to this function searchs aws profile with fzf
-#   - selecting an item returns value to the prompt in edit mode
+#   - Ctrl-b bound to this function searches aws profile with fzf
+#   - selecting an item returns the profile to the prompt in edit mode
 #   - similar to Ctrl-r doing a history search with fzf
+#   - $ Ctrl-b->pick profile->type aws command->[enter]
 __fzf_ap() {
   local output
   output=$(
